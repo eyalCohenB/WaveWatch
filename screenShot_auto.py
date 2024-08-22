@@ -20,7 +20,8 @@ def main():
     # Start screen capture loop.
     try:
         i = 1
-        while True:
+        start_time = time.time()
+        while time.time() - start_time < 300: # working for 5 min (60sec = min)
             img_name = "img"+ str(i) + ".png"
             img_path = dir_name + "/" + img_name
             image = pyautogui.screenshot(img_path)
